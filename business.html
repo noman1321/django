@@ -1,0 +1,31 @@
+<!-- {% extends 'base.html' %}
+{% block content %}
+<h2>Business Listings</h2>
+<form method="GET">
+    <input type="text" name="q" placeholder="Search for businesses...">
+    <button type="submit">Search</button>
+</form>
+<ul>
+    {% for business in businesses %}
+    <li>{{ business.name }} - {{ business.city }}, {{ business.country }}</li>
+    {% endfor %}
+</ul>
+{% endblock %} -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business List</title>
+</head>
+<body>
+    <h1>Business List</h1>
+    <ul>
+        {% for business in businesses %}
+            <li>{{ business.name }}: {{ business.description }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_business' %}">Add a New Business</a>
+</body>
+</html>
